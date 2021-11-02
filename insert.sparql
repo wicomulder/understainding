@@ -1,0 +1,29 @@
+PREFIX mas4ai: <http://example.org/MAS4AI_GenericModel#>
+
+INSERT DATA
+{
+#create instance of type Task
+mas4ai:TaskMilling1 a mas4ai:MillingTask .
+mas4ai:TaskMilling2 a mas4ai:MillingTask .
+mas4ai:TaskMilling3 a mas4ai:MillingTask .#create Job consisting of 3 tasks
+mas4ai:JobA a mas4ai:Job .
+mas4ai:JobA mas4ai:consistsOfTask mas4ai:TaskMilling1 .
+mas4ai:JobA mas4ai:consistsOfTask mas4ai:TaskMilling2 .
+mas4ai:JobA mas4ai:consistsOfTask mas4ai:TaskMilling3 .#creating Milling Assets
+mas4ai:MillingAsset1 a mas4ai:MillingAsset .
+mas4ai:MillingAsset2 a mas4ai:MillingAsset .#create skills
+mas4ai:skill1 a mas4ai:Skill .
+mas4ai:skill2 a mas4ai:Skill .
+mas4ai:skill3 a mas4ai:Skill .#create Agent capable of fullfilling 2 milling skills
+mas4ai:MillingAgent1 a mas4ai:MillingAgent .
+mas4ai:MillingAgent1 mas4ai:hasSkill mas4ai:skill1 .
+mas4ai:MillingAgent1 mas4ai:hasSkill mas4ai:skill2 .
+mas4ai:MillingAgent1 mas4ai:controlsMilling mas4ai:MillingAsset1 .#create Agent capable of fulliing a milling skill and assign to control a Milling Asset
+mas4ai:MillingAgent2 a mas4ai:MillingAgent .
+mas4ai:MillingAgent2 mas4ai:hasSkill mas4ai:skill3 .
+mas4ai:MillingAgent2 mas4ai:controlsMilling mas4ai:MillingAsset2 .#connect skills to tasks
+mas4ai:skill1 mas4ai:canHandle mas4ai:TaskMilling1 .
+mas4ai:skill2 mas4ai:canHandle mas4ai:TaskMilling2 .
+mas4ai:skill3 mas4ai:canHandle mas4ai:TaskMilling3 .#create Agent which fullfills no tasks (to check query later on)
+mas4ai:MillingAgent3 a mas4ai:MillingAgent .
+}

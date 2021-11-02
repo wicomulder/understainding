@@ -1,0 +1,12 @@
+PREFIX mas4ai: <http://example.org/MAS4AI_GenericModel#>
+SELECT (?tasks AS ?ConsistsOfTasks)
+(?skill AS ?NeedsSkill)
+(?agent AS ?PerformableBy)
+(?MillingAsset AS ?ManufacturingMachine)
+{
+#welke assets (machines) zijn nodig voor jobA
+mas4ai:JobA mas4ai:consistsOfTask ?tasks .
+?skill mas4ai:canHandle ?tasks .
+?agent mas4ai:hasSkill ?skill .
+?agent mas4ai:controlsMilling ?MillingAsset .
+}

@@ -1,0 +1,3 @@
+SELECT ?x WHERE {
+ BIND('Hello world!' as ?x)
+}

@@ -1,0 +1,263 @@
+# baseURI: http://example.org/MAS4AI_GenericModel
+# imports: http://www.w3.org/2004/02/skos/core
+# prefix: MAS4AI_GenericModel
+
+@prefix MAS4AI_GenericModel: <http://example.org/MAS4AI_GenericModel#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+<http://example.org/MAS4AI_GenericModel>
+  rdf:type owl:Ontology ;
+  owl:imports <http://www.w3.org/2004/02/skos/core> ;
+  owl:versionInfo "Created with TopBraid Composer" ;
+.
+MAS4AI_GenericModel:AAS
+  rdf:type owl:Class ;
+  rdfs:subClassOf MAS4AI_GenericModel:Interface ;
+.
+MAS4AI_GenericModel:Agent
+  rdf:type owl:Class ;
+  rdfs:subClassOf owl:Thing ;
+  skos:definition "An agent is a thing (entity) that acts autonomously, performs tasks and communicates with its environment" ;
+.
+MAS4AI_GenericModel:AgentCollaborationStrategy
+  rdf:type owl:Class ;
+  rdfs:subClassOf MAS4AI_GenericModel:Strategy ;
+  skos:definition "defines how to collaborate with other agents" ;
+.
+MAS4AI_GenericModel:Asset
+  rdf:type owl:Class ;
+  rdfs:subClassOf owl:Thing ;
+.
+MAS4AI_GenericModel:Behaviour
+  rdf:type owl:Class ;
+  rdfs:subClassOf owl:Thing ;
+  skos:changeNote "maybe not specify to BDI make more generic, describe it in terms of the 'engine inside an agent'" ;
+  skos:definition "Rules, actions, internal processes" ;
+.
+MAS4AI_GenericModel:Component
+  rdf:type owl:Class ;
+  rdfs:subClassOf owl:Thing ;
+.
+MAS4AI_GenericModel:DigitalFactory
+  rdf:type owl:Class ;
+  rdfs:subClassOf owl:Thing ;
+  skos:definition "Generic thing within the context of MAS4AI" ;
+.
+MAS4AI_GenericModel:ExternalGateway
+  rdf:type owl:Class ;
+  rdfs:subClassOf MAS4AI_GenericModel:Interface ;
+  skos:definition "Interface that allows for external communication (requests, orders, responses)" ;
+.
+MAS4AI_GenericModel:FriendManagementStrategy
+  rdf:type owl:Class ;
+  rdfs:subClassOf MAS4AI_GenericModel:Strategy ;
+.
+MAS4AI_GenericModel:FriendManagingBehaviour
+  rdf:type owl:Class ;
+  rdfs:subClassOf MAS4AI_GenericModel:Behaviour ;
+.
+MAS4AI_GenericModel:Identity
+  rdf:type owl:Class ;
+  rdfs:subClassOf MAS4AI_GenericModel:Interface ;
+  skos:definition "Describes the origin, the kind, and possible skills " ;
+.
+MAS4AI_GenericModel:Interface
+  rdf:type owl:Class ;
+  rdfs:subClassOf owl:Thing ;
+.
+MAS4AI_GenericModel:InternalCommunication
+  rdf:type owl:Class ;
+  rdfs:subClassOf MAS4AI_GenericModel:Interface ;
+  skos:definition "Allows to communicate between entitites of the same kind, in a specific internal language" ;
+.
+MAS4AI_GenericModel:Job
+  rdf:type owl:Class ;
+  rdfs:subClassOf owl:Thing ;
+.
+MAS4AI_GenericModel:MAS4AI_Agent
+  rdf:type owl:Class ;
+  rdfs:subClassOf MAS4AI_GenericModel:Agent ;
+.
+MAS4AI_GenericModel:MilledProduct
+  rdf:type owl:Class ;
+  rdfs:subClassOf MAS4AI_GenericModel:Product ;
+.
+MAS4AI_GenericModel:MillingAgent
+  rdf:type owl:Class ;
+  rdfs:subClassOf MAS4AI_GenericModel:MAS4AI_Agent ;
+.
+MAS4AI_GenericModel:MillingAsset
+  rdf:type owl:Class ;
+  rdfs:subClassOf MAS4AI_GenericModel:Asset ;
+.
+MAS4AI_GenericModel:MillingBehaviour
+  rdf:type owl:Class ;
+  rdfs:subClassOf MAS4AI_GenericModel:Behaviour ;
+  skos:definition "Part that comprimises the behaviour and (learning) models of carry out a specific task related to a particular skill" ;
+.
+MAS4AI_GenericModel:MillingTask
+  rdf:type owl:Class ;
+  rdfs:subClassOf MAS4AI_GenericModel:Task ;
+.
+MAS4AI_GenericModel:Plan
+  rdf:type owl:Class ;
+  rdfs:subClassOf MAS4AI_GenericModel:Product ;
+.
+MAS4AI_GenericModel:PlanningAgent
+  rdf:type owl:Class ;
+  rdfs:subClassOf MAS4AI_GenericModel:MAS4AI_Agent ;
+  skos:definition "Agent that takes care for making a planning" ;
+.
+MAS4AI_GenericModel:PlanningBehaviour
+  rdf:type owl:Class ;
+  rdfs:subClassOf MAS4AI_GenericModel:Behaviour ;
+.
+MAS4AI_GenericModel:PlanningProcess
+  rdf:type owl:Class ;
+  rdfs:subClassOf MAS4AI_GenericModel:Process ;
+.
+MAS4AI_GenericModel:PlanningTask
+  rdf:type owl:Class ;
+  rdfs:subClassOf MAS4AI_GenericModel:Task ;
+.
+MAS4AI_GenericModel:Process
+  rdf:type owl:Class ;
+  rdfs:subClassOf owl:Thing ;
+.
+MAS4AI_GenericModel:Product
+  rdf:type owl:Class ;
+  rdfs:subClassOf owl:Thing ;
+.
+MAS4AI_GenericModel:Skill
+  rdf:type owl:Class ;
+  rdfs:subClassOf owl:Thing ;
+.
+MAS4AI_GenericModel:Strategy
+  rdf:type owl:Class ;
+  rdfs:subClassOf owl:Thing ;
+.
+MAS4AI_GenericModel:Task
+  rdf:type owl:Class ;
+  rdfs:subClassOf owl:Thing ;
+.
+MAS4AI_GenericModel:UserInteractionStrategy
+  rdf:type owl:Class ;
+  rdfs:subClassOf MAS4AI_GenericModel:Strategy ;
+  skos:definition "defines how to interact with the user (human, machine or other agent)" ;
+.
+MAS4AI_GenericModel:canDoMilling
+  rdf:type owl:ObjectProperty ;
+  rdfs:domain MAS4AI_GenericModel:MillingAsset ;
+  rdfs:range MAS4AI_GenericModel:MillingTask ;
+.
+MAS4AI_GenericModel:canHandle
+  rdf:type owl:ObjectProperty ;
+  rdfs:domain MAS4AI_GenericModel:Skill ;
+  rdfs:range MAS4AI_GenericModel:Task ;
+.
+MAS4AI_GenericModel:consistOf
+  rdf:type owl:ObjectProperty ;
+  rdfs:domain MAS4AI_GenericModel:DigitalFactory ;
+  rdfs:range MAS4AI_GenericModel:Asset ;
+  rdfs:range MAS4AI_GenericModel:MAS4AI_Agent ;
+  rdfs:range MAS4AI_GenericModel:Process ;
+.
+MAS4AI_GenericModel:consistsOfTask
+  rdf:type owl:ObjectProperty ;
+  rdfs:domain MAS4AI_GenericModel:Job ;
+  rdfs:range MAS4AI_GenericModel:Task ;
+.
+MAS4AI_GenericModel:contains
+  rdf:type owl:ObjectProperty ;
+  rdfs:domain MAS4AI_GenericModel:MAS4AI_Agent ;
+  skos:editorialNote "can have multiple parts" ;
+.
+MAS4AI_GenericModel:controlsMilling
+  rdf:type owl:ObjectProperty ;
+  rdfs:domain MAS4AI_GenericModel:MillingAgent ;
+  rdfs:range MAS4AI_GenericModel:MillingAsset ;
+.
+MAS4AI_GenericModel:describesAsset
+  rdf:type owl:ObjectProperty ;
+  rdfs:domain MAS4AI_GenericModel:AAS ;
+  rdfs:range MAS4AI_GenericModel:Asset ;
+.
+MAS4AI_GenericModel:fullfillsMillingTask
+  rdf:type owl:ObjectProperty ;
+  rdfs:domain MAS4AI_GenericModel:MillingAgent ;
+  rdfs:range MAS4AI_GenericModel:MillingTask ;
+.
+MAS4AI_GenericModel:fullfillsPlanningTask
+  rdf:type owl:ObjectProperty ;
+  rdfs:domain MAS4AI_GenericModel:PlanningAgent ;
+  rdfs:range MAS4AI_GenericModel:PlanningTask ;
+.
+MAS4AI_GenericModel:hasBehaviour
+  rdf:type owl:ObjectProperty ;
+  rdfs:domain MAS4AI_GenericModel:MAS4AI_Agent ;
+  rdfs:range MAS4AI_GenericModel:Behaviour ;
+  skos:editorialNote "can have more than one behaviour" ;
+.
+MAS4AI_GenericModel:hasInterface
+  rdf:type owl:ObjectProperty ;
+  rdfs:domain MAS4AI_GenericModel:MAS4AI_Agent ;
+  rdfs:range MAS4AI_GenericModel:Interface ;
+  skos:editorialNote "can have more than one interface" ;
+.
+MAS4AI_GenericModel:hasName
+  rdf:type owl:DatatypeProperty ;
+  rdfs:domain MAS4AI_GenericModel:Agent ;
+  rdfs:range xsd:string ;
+.
+MAS4AI_GenericModel:hasSkill
+  rdf:type owl:ObjectProperty ;
+  rdfs:domain MAS4AI_GenericModel:MAS4AI_Agent ;
+  rdfs:range MAS4AI_GenericModel:Skill ;
+  skos:editorialNote "can have multiple skills" ;
+.
+MAS4AI_GenericModel:isResponsibleFor
+  rdf:type owl:ObjectProperty ;
+  rdfs:domain MAS4AI_GenericModel:MAS4AI_Agent ;
+  rdfs:range MAS4AI_GenericModel:Process ;
+  skos:editorialNote "can be restricted : e.g. planning agent is responsible for a planning process" ;
+.
+MAS4AI_GenericModel:realizesMilledProduct
+  rdf:type owl:ObjectProperty ;
+  rdfs:domain MAS4AI_GenericModel:MillingAsset ;
+  rdfs:range MAS4AI_GenericModel:MilledProduct ;
+.
+MAS4AI_GenericModel:realizesPlan
+  rdf:type owl:ObjectProperty ;
+  rdfs:domain MAS4AI_GenericModel:PlanningAgent ;
+  rdfs:range MAS4AI_GenericModel:Plan ;
+.
+MAS4AI_GenericModel:requiresAsset
+  rdf:type owl:ObjectProperty ;
+  rdfs:domain MAS4AI_GenericModel:MillingTask ;
+  rdfs:range MAS4AI_GenericModel:MillingAsset ;
+.
+MAS4AI_GenericModel:requiresComponent
+  rdf:type owl:ObjectProperty ;
+  rdfs:domain MAS4AI_GenericModel:Task ;
+  rdfs:range MAS4AI_GenericModel:Component ;
+.
+MAS4AI_GenericModel:requiresSkill
+  rdf:type owl:ObjectProperty ;
+  rdfs:domain MAS4AI_GenericModel:Task ;
+  rdfs:range MAS4AI_GenericModel:Skill ;
+.
+MAS4AI_GenericModel:resultsInProduct
+  rdf:type owl:ObjectProperty ;
+  rdfs:domain MAS4AI_GenericModel:Task ;
+  rdfs:range MAS4AI_GenericModel:Product ;
+.
+MAS4AI_GenericModel:usesStrategy
+  rdf:type owl:ObjectProperty ;
+  rdfs:domain MAS4AI_GenericModel:Behaviour ;
+  rdfs:range MAS4AI_GenericModel:Strategy ;
+  skos:editorialNote "can make use of multiple strategies" ;
+.

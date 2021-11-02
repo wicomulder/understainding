@@ -1,0 +1,10 @@
+PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> 
+DELETE
+{
+?s ?p ?o
+}
+WHERE {
+?s ?p ?o .
+FILTER (STRSTARTS(STR(?o), "http://example.org/MAS4AI_GenericModel#"))
+FILTER (STRSTARTS(STR(?p), "http://example.org/MAS4AI_GenericModel#")||?p=rdf:type)
+}
