@@ -65,6 +65,11 @@ MAS4AI_GenericModel:Identity
   rdfs:subClassOf MAS4AI_GenericModel:Interface ;
   skos:definition "Describes the origin, the kind, and possible skills " ;
 .
+MAS4AI_GenericModel:InformationAgent
+  rdf:type owl:Class ;
+  rdfs:subClassOf MAS4AI_GenericModel:MAS4AI_Agent ;
+  skos:definition "Agent that collect and analyse information from different sources and optimizate information exchange (among agents)" ;
+.
 MAS4AI_GenericModel:Interface
   rdf:type owl:Class ;
   rdfs:subClassOf owl:Thing ;
@@ -82,17 +87,10 @@ MAS4AI_GenericModel:MAS4AI_Agent
   rdf:type owl:Class ;
   rdfs:subClassOf MAS4AI_GenericModel:Agent ;
 .
-MAS4AI_GenericModel:MilledProduct
-  rdf:type owl:Class ;
-  rdfs:subClassOf MAS4AI_GenericModel:Product ;
-.
-MAS4AI_GenericModel:MillingAgent
+MAS4AI_GenericModel:MAS4AI_HMIHMCAgent
   rdf:type owl:Class ;
   rdfs:subClassOf MAS4AI_GenericModel:MAS4AI_Agent ;
-.
-MAS4AI_GenericModel:MillingAsset
-  rdf:type owl:Class ;
-  rdfs:subClassOf MAS4AI_GenericModel:Asset ;
+  skos:definition "Agent that aims to improve human machine interactions by optimizing the information workflow between agents and humands and prodviding explainable solutions and instructions to operators" ;
 .
 MAS4AI_GenericModel:MillingBehaviour
   rdf:type owl:Class ;
@@ -103,14 +101,13 @@ MAS4AI_GenericModel:MillingTask
   rdf:type owl:Class ;
   rdfs:subClassOf MAS4AI_GenericModel:Task ;
 .
+MAS4AI_GenericModel:Order
+  rdf:type owl:Class ;
+  rdfs:subClassOf owl:Thing ;
+.
 MAS4AI_GenericModel:Plan
   rdf:type owl:Class ;
   rdfs:subClassOf MAS4AI_GenericModel:Product ;
-.
-MAS4AI_GenericModel:PlanningAgent
-  rdf:type owl:Class ;
-  rdfs:subClassOf MAS4AI_GenericModel:MAS4AI_Agent ;
-  skos:definition "Agent that takes care for making a planning" ;
 .
 MAS4AI_GenericModel:PlanningBehaviour
   rdf:type owl:Class ;
@@ -128,9 +125,51 @@ MAS4AI_GenericModel:Process
   rdf:type owl:Class ;
   rdfs:subClassOf owl:Thing ;
 .
+MAS4AI_GenericModel:ProcessOrchestrationAgent
+  rdf:type owl:Class ;
+  rdfs:subClassOf MAS4AI_GenericModel:MAS4AI_Agent ;
+  skos:definition "Agent that dynamically coordinates entities involved in the production process" ;
+.
 MAS4AI_GenericModel:Product
   rdf:type owl:Class ;
   rdfs:subClassOf owl:Thing ;
+.
+MAS4AI_GenericModel:ProductAgent
+  rdf:type owl:Class ;
+  rdfs:subClassOf MAS4AI_GenericModel:MAS4AI_Agent ;
+  skos:definition "Agent that tracks product requirements during its lifecycle" ;
+.
+MAS4AI_GenericModel:ProductionPlanningAgent
+  rdf:type owl:Class ;
+  rdfs:subClassOf MAS4AI_GenericModel:MAS4AI_Agent ;
+  skos:definition "Agent that dynamically optimizes scheduling and reschedule planning" ;
+.
+MAS4AI_GenericModel:QualityInspectionAgent
+  rdf:type owl:Class ;
+  rdfs:subClassOf MAS4AI_GenericModel:MAS4AI_Agent ;
+  skos:definition "Agent aimed at monitoring and/or optimizing quality of produced parts" ;
+.
+MAS4AI_GenericModel:RequestsForProduct
+  rdf:type owl:ObjectProperty ;
+  rdfs:domain MAS4AI_GenericModel:Order ;
+  rdfs:range MAS4AI_GenericModel:Product ;
+.
+MAS4AI_GenericModel:Resource
+  rdf:type owl:Class ;
+  rdfs:subClassOf MAS4AI_GenericModel:Asset ;
+.
+MAS4AI_GenericModel:ResourceAgent
+  rdf:type owl:Class ;
+  rdfs:subClassOf MAS4AI_GenericModel:MAS4AI_Agent ;
+.
+MAS4AI_GenericModel:ResourceResultingProduct
+  rdf:type owl:Class ;
+  rdfs:subClassOf MAS4AI_GenericModel:Product ;
+.
+MAS4AI_GenericModel:SafetyAgent
+  rdf:type owl:Class ;
+  rdfs:subClassOf MAS4AI_GenericModel:MAS4AI_Agent ;
+  skos:definition "Agent that monitors and assess risks dynamically" ;
 .
 MAS4AI_GenericModel:Skill
   rdf:type owl:Class ;
@@ -144,6 +183,10 @@ MAS4AI_GenericModel:Task
   rdf:type owl:Class ;
   rdfs:subClassOf owl:Thing ;
 .
+MAS4AI_GenericModel:UriToAAS
+  rdf:type owl:DatatypeProperty ;
+  rdfs:range xsd:string ;
+.
 MAS4AI_GenericModel:UserInteractionStrategy
   rdf:type owl:Class ;
   rdfs:subClassOf MAS4AI_GenericModel:Strategy ;
@@ -151,7 +194,7 @@ MAS4AI_GenericModel:UserInteractionStrategy
 .
 MAS4AI_GenericModel:canDoMilling
   rdf:type owl:ObjectProperty ;
-  rdfs:domain MAS4AI_GenericModel:MillingAsset ;
+  rdfs:domain MAS4AI_GenericModel:Resource ;
   rdfs:range MAS4AI_GenericModel:MillingTask ;
 .
 MAS4AI_GenericModel:canHandle
@@ -176,10 +219,10 @@ MAS4AI_GenericModel:contains
   rdfs:domain MAS4AI_GenericModel:MAS4AI_Agent ;
   skos:editorialNote "can have multiple parts" ;
 .
-MAS4AI_GenericModel:controlsMilling
+MAS4AI_GenericModel:controlsResource
   rdf:type owl:ObjectProperty ;
-  rdfs:domain MAS4AI_GenericModel:MillingAgent ;
-  rdfs:range MAS4AI_GenericModel:MillingAsset ;
+  rdfs:domain MAS4AI_GenericModel:ResourceAgent ;
+  rdfs:range MAS4AI_GenericModel:Resource ;
 .
 MAS4AI_GenericModel:describesAsset
   rdf:type owl:ObjectProperty ;
@@ -188,12 +231,12 @@ MAS4AI_GenericModel:describesAsset
 .
 MAS4AI_GenericModel:fullfillsMillingTask
   rdf:type owl:ObjectProperty ;
-  rdfs:domain MAS4AI_GenericModel:MillingAgent ;
+  rdfs:domain MAS4AI_GenericModel:ResourceAgent ;
   rdfs:range MAS4AI_GenericModel:MillingTask ;
 .
 MAS4AI_GenericModel:fullfillsPlanningTask
   rdf:type owl:ObjectProperty ;
-  rdfs:domain MAS4AI_GenericModel:PlanningAgent ;
+  rdfs:domain MAS4AI_GenericModel:ProductionPlanningAgent ;
   rdfs:range MAS4AI_GenericModel:PlanningTask ;
 .
 MAS4AI_GenericModel:hasBehaviour
@@ -227,18 +270,18 @@ MAS4AI_GenericModel:isResponsibleFor
 .
 MAS4AI_GenericModel:realizesMilledProduct
   rdf:type owl:ObjectProperty ;
-  rdfs:domain MAS4AI_GenericModel:MillingAsset ;
-  rdfs:range MAS4AI_GenericModel:MilledProduct ;
+  rdfs:domain MAS4AI_GenericModel:Resource ;
+  rdfs:range MAS4AI_GenericModel:ResourceResultingProduct ;
 .
 MAS4AI_GenericModel:realizesPlan
   rdf:type owl:ObjectProperty ;
-  rdfs:domain MAS4AI_GenericModel:PlanningAgent ;
+  rdfs:domain MAS4AI_GenericModel:ProductionPlanningAgent ;
   rdfs:range MAS4AI_GenericModel:Plan ;
 .
 MAS4AI_GenericModel:requiresAsset
   rdf:type owl:ObjectProperty ;
   rdfs:domain MAS4AI_GenericModel:MillingTask ;
-  rdfs:range MAS4AI_GenericModel:MillingAsset ;
+  rdfs:range MAS4AI_GenericModel:Resource ;
 .
 MAS4AI_GenericModel:requiresComponent
   rdf:type owl:ObjectProperty ;
