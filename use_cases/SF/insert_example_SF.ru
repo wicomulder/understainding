@@ -7,17 +7,17 @@ PREFIX sf: <http://mas4ai.eu/def/sf/>
 INSERT DATA {
 
 # Asset
-<asset/Shuttle> a mas4ai:Asset .
-<asset/QS> a mas4ai:Asset .
-<asset/Worker1> a mas4ai:Asset .
+<asset/Shuttle> a mas4ai:Resource .
+<asset/QS> a mas4ai:Resource .
+<asset/Worker1> a mas4ai:Resource .
 
 # Agent
 sf:TransportAgent rdfs:subClassOf mas4ai:ResourceAgent .
 <transportagent/ShuttleAgent> a sf:TransportAgent .
 sf:ModuleAgent rdfs:subClassOf mas4ai:ResourceAgent .
 <moduleagent/QSAgent1> a sf:ModuleAgent .
-sf:HMIAgent rdfs:subClassOf mas4ai:MAS4AI_HMIHMCAgent .
-<hmiagent/WorkerAgent> a sf:HMIAgent .
+sf:HumanAgent rdfs:subClassOf mas4ai:MAS4AI_HMIHMCAgent .
+<humanagent/WorkerAgent> a sf:HMIAgent .
 
 # Relation Agent and Asset
 <transportagent/ShuttleAgent> mas4ai:controlsResource <asset/Shuttle> .

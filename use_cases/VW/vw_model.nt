@@ -305,4 +305,4 @@
 <http://mas4ai.eu/def/vw/WH> <http://purl.org/dc/terms/description> "Wheel"^^<http://www.w3.org/2001/XMLSchema#string> .
 <http://mas4ai.eu/def/vw/WHF> <http://purl.org/dc/terms/description> "Wheel House Front"^^<http://www.w3.org/2001/XMLSchema#string> .
 <http://mas4ai.eu/def/vw/WHR> <http://purl.org/dc/terms/description> "Wheel House Rear"^^<http://www.w3.org/2001/XMLSchema#string> .
-<http://mas4ai.eu/def/vw/TransportAgent> <http://purl.org/dc/terms/description> "A transport agent is the digital representation of an transport resources (for example an AGV)"^^<http://www.w3.org/2001/XMLSchema#string> .
+<http://mas4ai.eu/def/vw/TransportAgent> <http://purl.org/dc/terms/description> "A transport agent is the digital representation of a transport resource (for example an AGV)"^^<http://www.w3.org/2001/XMLSchema#string> .
