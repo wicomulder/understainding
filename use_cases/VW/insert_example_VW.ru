@@ -7,9 +7,13 @@ PREFIX vw: <http://mas4ai.eu/def/vw/>
 INSERT DATA {
 
 # Asset
-vw:UBStation rdfs:subClassOf mas4ai:Resource . #L2 Under Body work station
+vw:Factory rdfs:subClassOf mas4ai:Resource . #subclass of mas4ai:Asset or mas4ai:Resource?
+vw:WorkStation rdfs:subClassOf mas4ai:Resource .
+vw:Resource rdfs:subClassOf mas4ai:Resource .
+
+vw:UBStation rdfs:subClassOf vw:WorkStation . #L2 Under Body work station
 <ubstation/UBStation1> a vw:UBStation .
-vw:UBclip rdfs:subClassOf mas4ai:Resource . #L3 UB clip process
+vw:UBclip rdfs:subClassOf vw:Resource . #L3 UB clip process
 <ubclip/UBclip1> a vw:UBclip . #instance: need to check whether there can be multiple instances of the same workstation and process
 
 # Agent

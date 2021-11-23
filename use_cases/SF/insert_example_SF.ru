@@ -9,7 +9,7 @@ INSERT DATA {
 # Asset
 <asset/Shuttle> a mas4ai:Asset .
 <asset/QS> a mas4ai:Asset .
-<asset/worker1> a mas4ai:Asset .
+<asset/Worker1> a mas4ai:Asset .
 
 # Agent
 sf:TransportAgent rdfs:subClassOf mas4ai:ResourceAgent .
@@ -22,7 +22,7 @@ sf:HMIAgent rdfs:subClassOf mas4ai:MAS4AI_HMIHMCAgent .
 # Relation Agent and Asset
 <transportagent/ShuttleAgent> mas4ai:controlsResource <asset/Shuttle> .
 <productionmoduleagent/ProductionModuleAgent1> mas4ai:controlsResource <asset/QS> .
-<hmiagent/WorkerAgent> mas4ai:controlsResource <asset/worker1> .
+<hmiagent/WorkerAgent> mas4ai:controlsResource <asset/Worker1> .
 
 # TODO: Relation agent/asset and AAS
 
