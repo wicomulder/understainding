@@ -1,0 +1,20 @@
+<http://mas4ai.eu/def/sfkl> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Ontology> .
+<http://mas4ai.eu/def/sfkl> <http://www.w3.org/2002/07/owl#imports> <http://example.org/MAS4AI_GenericModel> .
+<http://mas4ai.eu/def/sfkl/Shuttle> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<http://mas4ai.eu/def/sfkl/Shuttle> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://example.org/MAS4AI_GenericModel#Resource> .
+<http://mas4ai.eu/def/sfkl/Worker> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<http://mas4ai.eu/def/sfkl/Worker> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://example.org/MAS4AI_GenericModel#Resource> .
+<http://mas4ai.eu/def/sfkl/Module> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<http://mas4ai.eu/def/sfkl/Module> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://example.org/MAS4AI_GenericModel#Resource> .
+<http://mas4ai.eu/def/sfkl/QS> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<http://mas4ai.eu/def/sfkl/QS> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://mas4ai.eu/def/sfkl/Module> .
+<http://mas4ai.eu/def/sfkl/ModuleAgent> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<http://mas4ai.eu/def/sfkl/ModuleAgent> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://example.org/MAS4AI_GenericModel#ResourceAgent> .
+<http://mas4ai.eu/def/sfkl/TransportAgent> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<http://mas4ai.eu/def/sfkl/TransportAgent> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://example.org/MAS4AI_GenericModel#ResourceAgent> .
+<http://mas4ai.eu/def/sfkl/HumanAgent> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<http://mas4ai.eu/def/sfkl/HumanAgent> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://example.org/MAS4AI_GenericModel#MAS4AI_HMIHMCAgent> .
+<http://mas4ai.eu/def/sfkl/Module> <http://purl.org/dc/terms/description> "Module that can be plugged in to the demonstrator setup"^^<http://www.w3.org/2001/XMLSchema#string> .
+<http://mas4ai.eu/def/sfkl/ModuleAgent> <http://purl.org/dc/terms/description> "A module agent is the digital representation of a production module"^^<http://www.w3.org/2001/XMLSchema#string> .
+<http://mas4ai.eu/def/sfkl/TransportAgent> <http://purl.org/dc/terms/description> "A transport agent is the digital representation of a transport resource (for example a shuttle)"^^<http://www.w3.org/2001/XMLSchema#string> .
+<http://mas4ai.eu/def/sfkl/HumanAgent> <http://purl.org/dc/terms/description> "A human agent is the digital representation of a worker, represented via HMI"^^<http://www.w3.org/2001/XMLSchema#string> .
